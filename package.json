@@ -1,0 +1,40 @@
+{
+  "name": "fan-browser-runtime-repo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent-first local browser runtime with stable observations, snapshot-bound actions, and human handoff primitives.",
+  "homepage": "https://fandcode.com",
+  "author": "musk",
+  "license": "Apache-2.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "tsc -b packages/protocol packages/runtime packages/node-client apps/cli",
+    "check": "tsc -b packages/protocol packages/runtime packages/node-client apps/cli --pretty false",
+    "clean": "tsc -b packages/protocol packages/runtime packages/node-client apps/cli --clean",
+    "dev": "tsx apps/cli/src/index.ts",
+    "example": "tsx examples/basic/index.ts",
+    "test": "tsx --test test/*.test.ts",
+    "preflight": "npm run check && npm test && npm run build && npm pack --workspace @fan-browser-runtime/protocol --dry-run && npm pack --workspace fan-browser-runtime --dry-run && npm pack --workspace @fan-browser-runtime/node-client --dry-run && npm pack --workspace @fan-browser-runtime/cli --dry-run"
+  },
+  "keywords": [
+    "browser",
+    "agent",
+    "automation",
+    "runtime",
+    "cdp",
+    "mcp"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "execa": "^9.3.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}

@@ -1,0 +1,8 @@
+Fan Browser Runtime
+Copyright 2026 musk
+
+This repository is intended to contain only code that is safe to publish under
+the Apache License, Version 2.0.
+
+Before importing external code, review its provenance, license headers,
+telemetry, branding, and product-specific integration points.

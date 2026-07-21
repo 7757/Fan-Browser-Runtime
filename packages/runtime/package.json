@@ -1,0 +1,29 @@
+{
+  "name": "fan-browser-runtime",
+  "version": "0.1.0",
+  "description": "Agent-first local browser runtime with stable observations and snapshot-bound actions.",
+  "homepage": "https://fandcode.com",
+  "author": "musk",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@fan-browser-runtime/protocol": "0.1.0"
+  }
+}

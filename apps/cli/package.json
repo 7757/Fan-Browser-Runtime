@@ -1,0 +1,29 @@
+{
+  "name": "@fan-browser-runtime/cli",
+  "version": "0.1.0",
+  "description": "Command-line interface for Fan Browser Runtime.",
+  "homepage": "https://fandcode.com",
+  "author": "musk",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "fan-browser-runtime": "./dist/index.js",
+    "agent-browser": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@fan-browser-runtime/node-client": "0.1.0",
+    "@fan-browser-runtime/protocol": "0.1.0",
+    "fan-browser-runtime": "0.1.0"
+  }
+}
